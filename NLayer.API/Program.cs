@@ -5,6 +5,7 @@ using NLayer.Core.UnitOfWorks;
 using NLayer.Repository;
 using NLayer.Repository.Repositories;
 using NLayer.Repository.UnitOfWorks;
+using NLayer.Service.Services;
 using System.Reflection;
 
 namespace NLayer.API
@@ -23,7 +24,7 @@ namespace NLayer.API
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(Service<>));
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
             builder.Services.AddDbContext<AppDbContext>(x =>
             {
