@@ -4,11 +4,11 @@ using NLayer.Core.Repositories;
 
 namespace NLayer.Repository.Repositories
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class Service<T> : IGenericRepository<T> where T : class
     {
         protected readonly AppDbContext _dbContext;
         private readonly DbSet<T> _dbSet;
-        public GenericRepository(DbSet<T> dbSet, AppDbContext dbContext)
+        public Service(DbSet<T> dbSet, AppDbContext dbContext)
         {
             _dbContext = dbContext;
             _dbSet = dbContext.Set<T>();
