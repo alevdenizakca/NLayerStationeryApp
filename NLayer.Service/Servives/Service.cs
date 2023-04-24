@@ -9,14 +9,14 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLayer.Service.Servives
+namespace NLayer.Service.Services
 {
-    public class Servives<T> : IService<T> where T : class
+    public class Service<T> : IService<T> where T : class
     {
         private readonly IGenericRepository<T> _repository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public Servives(IUnitOfWork unitOfWork, IGenericRepository<T> repository)
+        public Service(IUnitOfWork unitOfWork, IGenericRepository<T> repository)
         {
             _unitOfWork = unitOfWork;
             _repository = repository;
